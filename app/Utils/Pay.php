@@ -7,6 +7,7 @@ use App\Models\Code;
 use App\Models\Paylist;
 use App\Models\Payback;
 use App\Services\Config;
+use App\Services\Payment;
 
 class Pay
 {
@@ -21,7 +22,9 @@ class Pay
             case 'zfbjk':
                 return Pay::zfbjk_html($user);
             case 'f2fpay':
-                return Pay::f2fpay_html($user);                
+                return Pay::f2fpay_html($user);
+            case 'aoppage':
+                return Payment::purchaseHTML();
             default:
                 return "";
         }
